@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <title>WordWise</title>
+  </head>
+  <body>
+    <%- include("partials/header") %>
+</head>
+<body>
+  <title>Онлайн обучение иностранным языкам</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .course-card {
+      margin: 20px 0;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <title>Онлайн обучение иностранным языкам</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .course-card {
+      margin: 20px 0;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .hero {
+      background: url('https://img.freepik.com/free-photo/panoramic-view-new-york-city-manhattan-midtown-dusk_268835-671.jpg?t=st=1733325521~exp=1733329121~hmac=109490d0dccdb0f5510024ef1cbb5fed152ac9d413ee29d4d2f74091749838d9&w=1380') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      
+    }
+    .hero::before {
+            content: '';
+            position: absolute;
+            top: 105px;
+            left: 0;
+            width: 1920px;
+            height: 365px;
+            background-color: rgba(0, 0, 0, 0.5); /* Затемнение: черный цвет с 50% непрозрачностью */
+            z-index: 1; /* Убедитесь, что затемненный слой находится над изображением */
+        }
+        .hero h1, .hero p {
+            position: relative; /* Чтобы текст был над затемнением */
+            z-index: 2; /* Текст будет над псевдоэлементом */
+        }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+    }
+    .btn-light {
+      position: relative; /* Чтобы текст был над затемнением */
+            z-index: 2; /* Текст будет над псевдоэлементом */
+    }
+    .custom-button {
+    position: absolute; /* Устанавливаем позицию */
+    top: 1200px; /* Отступ от верхней границы */
+    right: 300px; /* Отступ от правой границы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    padding: 10px 20px; /* Отступы */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+.cust-button {
+    position: absolute; /* Устанавливаем позицию */
+    top: 1200px; /* Отступ от верхней границы */
+    right: 170px; /* Отступ от правой границы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    padding: 10px 20px; /* Отступы */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+.cust-button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+
+  </style>
+</head>
+<body>
+  <a href="/raspis" class="btn cust-button mt-4">Расписание</a> <!-- Кнопка с пользовательским классом -->
+  <a href="/reviews" class="btn custom-button mt-4">Чат</a> <!-- Кнопка с пользовательским классом -->
+
+  <div class="hero">
+    <h1>Изучайте иностранные языки онлайн</h1>
+    <p>Гибкие курсы для любого уровня, от начинающих до продвинутых</p>
+    <a href="#" class="btn btn-light btn-lg">Начать обучение</a>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="text-center">Наши курсы</h2>
+    <div class="row">
+      <div class="col-md-4 course-card">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/statue-liberty-full-moon-sunset-new-york-city_649448-4345.jpg?t=st=1733327166~exp=1733330766~hmac=eaec846995bbfbfa582966904e4734f75163b87b937ee68158df18a37b059784&w=1380" class="card-img-top" alt="Курс английского языка">
+          <div class="card-body">
+            <h5 class="card-title">Курс английского языка</h5>
+            <p class="card-text">Изучайте английский язык с нуля или улучшайте свои навыки с опытными преподавателями. Удобное расписание и доступ к ресурсам.</p>
+            <a href="/courses" class="btn btn-primary">Записаться</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 course-card">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/salamanca-cathedral_181624-27401.jpg?t=st=1733327235~exp=1733330835~hmac=d8de508f3fe1e4b3e785b7aa5ae2b9d60fc8b8d5fcd9a335f3dc21032eef38f0&w=1380" class="card-img-top" alt="Курс испанского языка">
+          <div class="card-body">
+            <h5 class="card-title">Курс испанского языка</h5>
+            <p class="card-text">Погрузитесь в мир испанского языка и культуры с нашими интерактивными уроками. Практика разговорной речи в группах.</p>
+            <a href="/courses" class="btn btn-primary">Записаться</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 course-card">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg?t=st=1733327302~exp=1733330902~hmac=7739888cd36cde26e0af4415e89761f456f32776714e70fcd271bca40ebb7178&w=1380" class="card-img-top" alt="Курс французского языка">
+          <div class="card-body">
+            <h5 class="card-title">Курс французского языка</h5>
+            <p class="card-text">Изучите французский язык с носителями языка и погрузитесь в культуру Франции. Интерактивные занятия и онлайн-ресурсы.</p>
+            <a href="/courses" class="btn btn-primary">Записаться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5">
+     
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Опытные преподаватели</h5>
+          <p>Наши преподаватели - это профессионалы с многолетним опытом, готовые помочь вам в обучении.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Гибкость обучения</h5>
+          <p>Учитесь в удобное для вас время, выбирая расписание и формат занятий.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Интерактивные материалы</h5>
+          <p>Используйте современные учебные материалы и ресурсы для достижения наилучших результатов.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <footer>
+    <p>&copy; 2024 Языковая Академия. Все права защищены.</p>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" defer></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+</body>
+</html>

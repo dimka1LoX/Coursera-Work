@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>WordWise</title>
+</head>
+<body>
+    <header>
+        <div class="px-3 py-2 bg-dark text-white mb-3">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-white text-decoration-none me-lg-auto">
+                <img src="/image/logo.png" alt="" class="bi d-block mx-auto mb-1" width="40" height="40">
+                <h1 class="justify-content-center nav-link text-white">WordWise</h1>
+              </a>
+  
+              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                
+                
+                <% if (!user) { %>
+                  <li>
+                    <a href="/authorization" class="nav-link text-white">
+                      <img class="bi d-block mx-auto mb-1" width="24" height="24" src="/image/1.png">
+                      <font style="vertical-align: inherit;">Вход</font>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/registration" class="nav-link text-white">
+                      <img class="bi d-block mx-auto mb-1" width="24" height="24" src="/image/2.png">
+                      <font style="vertical-align: inherit;">Регистрация</font>
+                    </a>
+                  </li>
+                <% } %>
+  
+                <% if (user) { %>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img class="bi d-block mx-auto mb-1 rounded-circle" width="24" height="24" src="/image/3.png" style="border-radius: 50%;">
+                      <font style="vertical-align: inherit;"> <%= user.role %></font>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userDropdown">
+                      <li>
+                        <form class="dropdown-item" id="logoutForm" action="/logout" method="POST">
+                          <button type="submit" class="btn text-white btn-sm">Выйти</button>
+                        </form>
+                      </li>
+                    </ul>
+                  </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+  
+  </body>
+  </html>

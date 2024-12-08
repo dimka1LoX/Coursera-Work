@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>WordWise</title>
+  <style>
+   .registration-container {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-top: 10%;
+    }
+  </style>
+</head>
+<body>
+  <%- include("partials/header") %>
+
+  <div class="container col-md-4 registration-container">
+    <h1 class="mb-4 text-center">Регистрация</h1>
+    <form id="registrationForm" action="/register" method="POST">
+      <div class="mb-3">
+        <label for="regEmail" class="form-label" style="font-weight: bold">Электронная почта</label>
+        <input type="email" class="form-control" id="regEmail" name="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="regPassword" class="form-label" style="font-weight: bold">Пароль</label>
+        <input type="password" class="form-control" id="regPassword" name="password" required>
+      </div>
+
+      
+
+      <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+    </form>
+  </div>
+  
+  <div class="containermt-5">
+    <div class="row">
+        <div class="col-md-8"> <!-- Основное содержимое страницы -->
+            <!-- Здесь может быть ваше основное содержимое -->
+        </div>
+        <div class="col-md-4"> <!-- Блок новостей -->
+            <h2 class="mb-4">Новые курсы</h2>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Курс по испанскому языку</h5>
+                    <p class="mb-1">Начните изучать испанский язык с нуля. Уроки для начинающих и продвинутых.</p>
+                    <small>Дата начала: 15 ноября 2023</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Курс по английскому языку для бизнеса</h5>
+                    <p class="mb-1">Изучите английский язык на профессиональном уровне и улучшите свои навыки общения.</p>
+                    <small>Дата начала: 1 декабря 2023</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Курс по французскому языку</h5>
+                    <p class="mb-1">Узнайте основы французского языка и погрузитесь в культуру.</p>
+                    <small>Дата начала: 10 декабря 2023</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Курс по китайскому языку</h5>
+                    <p class="mb-1">Изучите китайский язык и откройте для себя новые возможности.</p>
+                    <small>Дата начала: 20 декабря 2023</small>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+  .containermt-5 {
+    position: absolute;
+right: 250px;
+top: 100px;
+  }
+</style>
+
+<div class="containermt-6">
+  <div class="row">
+      <div class="col-md-4"> <!-- Блок информации слева -->
+          <div class="list-group">
+              <h2 class="mb-4">Советы</h2>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <h5 class="mb-1">Практикуйте каждый день</h5>
+                  <p class="mb-1">Регулярная практика помогает закрепить новые знания.</p>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <h5 class="mb-1">Используйте приложения для изучения языков</h5>
+                  <p class="mb-1">Приложения, такие как Duolingo или Babbel, могут быть полезны.</p>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <h5 class="mb-1">Слушайте подкасты и смотрите фильмы</h5>
+                  <p class="mb-1">Это поможет вам привыкнуть к произношению и интонации.</p>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <h5 class="mb-1">Находите языкового партнера</h5>
+                  <p class="mb-1">Общение с носителями языка — отличный способ улучшить навыки.</p>
+              </a>
+          </div>
+      </div>
+<style>
+.containermt-6 {
+  position: absolute;
+left: 250px;
+top: 100px;
+width: 700px ;
+z-index: 10; /* Убедитесь, что этот элемент выше других */
+}
+</style>
+
+
+
+<style>
+  body {
+      background-image: url('https://i.pinimg.com/originals/d0/dd/c0/d0ddc00e98d229c27fa44446e2b1b52a.jpg'); /* Укажите путь к вашему изображению */
+      background-repeat: no-repeat; /* Запретить повторение изображения */
+      background-size: cover; /* Изображение заполнит весь экран */
+      background-position: center; /* Центрировать изображение */
+      margin: 0; /* Убрать отступы по умолчанию */
+      height: 100vh; /* Задать высоту в 100% от высоты окна */
+      filter: brightness(95%); /* Уменьшение яркости изображения */
+      
+  }
+  h1 {
+    color: rgb(255, 255, 255);
+  }
+
+  .mb-3 {
+    color: rgb(255, 255, 255);
+  }
+
+  .registration-container {
+  position: relative; /* Убедитесь, что контейнер регистрации тоже относителен */
+  z-index: 20; /* Установите более высокий z-index для контейнера регистрации */
+}
+</style>

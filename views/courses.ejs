@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css">
+    <title>Запись на курсы</title>
+</head>
+<body>
+    <%- include("partials/header") %>
+    
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Запись на курсы по иностранным языкам</h1>
+
+        <% if (user) { %> <!-- Проверка на авторизацию -->
+            <form action="/courses" method="POST" class="mb-4">
+                <div class="mb-3">
+                    <label for="language" class="form-label">Язык:</label>
+                    <select class="form-select" name="language" required>
+                        <option value="" disabled selected>Выберите язык</option>
+                        <option value="Английский">Английский</option>
+                        <option value="Испанский">Испанский</option>
+                        <option value="Французский">Французский</option>
+                        <option value="Немецкий">Немецкий</option>
+                        <option value="Итальянский">Итальянский</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="level" class="form-label">Уровень:</label>
+                    <select class="form-select" name="level" required>
+                        <option value="" disabled selected>Выберите уровень</option>
+                        <option value="Начальный">Начальный</option>
+                        <option value="Средний">Средний</option>
+                        <option value="Продвинутый">Продвинутый</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Описание:</label>
+                    <textarea class="form-control" name="description"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </form>
+        <% } else { %> <!-- Если пользователь не авторизован -->
+            <div class="alert alert-warning d-flex justify-content-between align-items-center" role="alert">
+                Чтобы записаться на курсы, вам нужно 
+                <a href="/authorization" class="btn btn-link">войти в систему</a>.
+            </div>
+        <% } %>
+
+        <h2 class="mb-3">Доступные курсы:</h2>
+        <ul class="list-group">
+            <% courses.forEach(course => { %>
+                <li class="list-group-item">
+                    <strong><%= course.language %></strong> - <%= course.level %>: <%= course.description %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
